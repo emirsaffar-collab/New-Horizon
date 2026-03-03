@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Map, Coffee, Sun, Waves, Clock, Facebook, Twitter, MessageCircle } from 'lucide-react';
+import { Map, Coffee, Waves, Clock, Facebook, Twitter, MessageCircle } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 
@@ -17,7 +17,6 @@ export default function Explore() {
       sections: [
         {
           title: "Sun & Sea: Our Coastal Gems",
-          icon: <Waves className="w-6 h-6 text-[#004C98]" />,
           intro: "Kea’s deeply folded coastline hides dozens of pristine beaches, ranging from fully organized sandy bays to wild, secluded coves.",
           items: [
             { 
@@ -44,7 +43,6 @@ export default function Explore() {
         },
         {
           title: "Gastronomy: From Dockside to Hilltop",
-          icon: <Coffee className="w-6 h-6 text-[#E2725B]" />,
           intro: "Kea's culinary scene is a sophisticated fusion of traditional Cycladic flavors and modern Mediterranean technique.",
           items: [
             { 
@@ -71,7 +69,6 @@ export default function Explore() {
         },
         {
           title: "Culture & Adventure",
-          icon: <Map className="w-6 h-6 text-[#556B2F]" />,
           intro: "Beyond the beaches, Kea is a playground for hikers, history enthusiasts, and advanced divers.",
           items: [
             { name: "The Ancient Trails (Τα Αρχαία Μονοπάτια)", desc: "Explore 81 km of marked, stone-paved ancient pathways. Trails range from easy family strolls to challenging treks; Route 1 (Ioulida to Karthea) is a moderate 2-hour hike through lush oak forests." },
@@ -100,7 +97,6 @@ export default function Explore() {
       sections: [
         {
           title: "Ήλιος & Θάλασσα: Τα Διαμάντια της Ακτογραμμής μας",
-          icon: <Waves className="w-6 h-6 text-[#004C98]" />,
           intro: "Η δαντελωτή ακτογραμμή της Κέας κρύβει δεκάδες παρθένες παραλίες, από πλήρως οργανωμένους αμμώδεις κόλπους μέχρι άγριους, απομονωμένους ορμίσκους.",
           items: [
             { 
@@ -127,7 +123,6 @@ export default function Explore() {
         },
         {
           title: "Γαστρονομία: Από το Λιμάνι ως τη Χώρα",
-          icon: <Coffee className="w-6 h-6 text-[#E2725B]" />,
           intro: "Η γαστρονομική σκηνή της Τζιας είναι μια εκλεπτυσμένη μίξη παραδοσιακών κυκλαδίτικων γεύσεων και σύγχρονων μεσογειακών τεχνικών.",
           items: [
             { 
@@ -154,7 +149,6 @@ export default function Explore() {
         },
         {
           title: "Πολιτισμός & Περιπέτεια",
-          icon: <Map className="w-6 h-6 text-[#556B2F]" />,
           intro: "Πέρα από τις παραλίες, η Κέα είναι ένας παράδεισος για πεζοπόρους, λάτρεις της ιστορίας και έμπειρους δύτες.",
           items: [
             { name: "Τα Αρχαία Μονοπάτια (The Ancient Trails)", desc: "Εξερευνήστε 81 χλμ. σηματοδοτημένων, λιθόστρωτων αρχαίων μονοπατιών. Οι διαδρομές κυμαίνονται από εύκολους οικογενειακούς περιπάτους έως απαιτητικές πεζοπορίες. Η Διαδρομή 1 (Ιουλίδα προς Καρθαία) είναι μια μέτρια πεζοπορία 2 ωρών μέσα από δάση βελανιδιάς." },
@@ -177,6 +171,12 @@ export default function Explore() {
   };
 
   const c = language === 'en' ? content.en : content.el;
+
+  const sectionIcons = [
+    <Waves key="waves" className="w-6 h-6 text-[#004C98]" aria-hidden="true" />,
+    <Coffee key="coffee" className="w-6 h-6 text-[#E2725B]" aria-hidden="true" />,
+    <Map key="map" className="w-6 h-6 text-[#556B2F]" aria-hidden="true" />,
+  ];
 
   return (
     <div className="bg-stone-50 min-h-screen pb-20">
@@ -272,7 +272,7 @@ export default function Explore() {
           <div key={idx} className="space-y-8 md:space-y-12">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="p-3 md:p-4 bg-white rounded-full shadow-sm border border-stone-100">
-                {section.icon}
+                {sectionIcons[idx]}
               </div>
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-stone-800 px-4">{section.title}</h2>
               <p className="max-w-2xl text-stone-500 font-light text-sm sm:text-base px-4">{section.intro}</p>

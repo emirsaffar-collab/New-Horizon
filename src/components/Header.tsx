@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
-import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function Header() {
   const { t, language, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleLanguage = () => {
+  const toggleLanguage = useCallback(() => {
     setLanguage(language === 'en' ? 'el' : 'en');
-  };
+  }, [language, setLanguage]);
+
+  const closeMenu = useCallback(() => setIsOpen(false), []);
+
+  // Close menu on Escape key
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeMenu();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, closeMenu]);
 
   return (
     <>
@@ -34,8 +45,12 @@ export default function Header() {
               <Link to="/location" className="text-stone-600 hover:text-[#004C98] transition-colors text-sm uppercase tracking-widest font-medium">
                 {t('nav.location')}
               </Link>
-              <button onClick={toggleLanguage} className="flex items-center text-stone-600 hover:text-[#004C98] transition-colors">
-                <Globe className="w-4 h-4 mr-1" />
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center text-stone-600 hover:text-[#004C98] transition-colors"
+                aria-label={language === 'en' ? 'Switch to Greek' : 'Switch to English'}
+              >
+                <Globe className="w-4 h-4 mr-1" aria-hidden="true" />
                 <span className="text-xs font-bold">{language.toUpperCase()}</span>
               </button>
               <Link to="/book" className="bg-[#E2725B] text-white px-6 py-2 rounded-none hover:bg-[#c55b45] transition-colors text-sm uppercase tracking-widest font-medium">
@@ -48,16 +63,18 @@ export default function Header() {
               <button
                 onClick={toggleLanguage}
                 className="flex items-center text-stone-600 p-2 min-w-[44px] min-h-[44px] justify-center"
-                aria-label="Toggle language"
+                aria-label={language === 'en' ? 'Switch to Greek' : 'Switch to English'}
               >
                 <span className="text-xs font-bold">{language.toUpperCase()}</span>
               </button>
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-stone-800 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
-                aria-label="Toggle menu"
+                aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                aria-expanded={isOpen}
+                aria-controls="mobile-nav"
               >
-                {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+                {isOpen ? <X className="w-8 h-8" aria-hidden="true" /> : <Menu className="w-8 h-8" aria-hidden="true" />}
               </button>
             </div>
           </div>
@@ -76,11 +93,16 @@ export default function Header() {
             {/* Backdrop */}
             <div
               className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm"
-              onClick={() => setIsOpen(false)}
+              onClick={closeMenu}
+              aria-hidden="true"
             />
 
-            {/* Menu Content */}
+            {/* Menu Drawer */}
             <motion.div
+              id="mobile-nav"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Navigation menu"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -89,10 +111,11 @@ export default function Header() {
             >
               <div className="flex justify-end p-6">
                 <button
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeMenu}
                   className="p-2 text-stone-400 hover:text-stone-800 transition-colors"
+                  aria-label="Close navigation menu"
                 >
-                  <X className="w-8 h-8" />
+                  <X className="w-8 h-8" aria-hidden="true" />
                 </button>
               </div>
 
@@ -110,7 +133,7 @@ export default function Header() {
                   >
                     <Link
                       to={item.to}
-                      onClick={() => setIsOpen(false)}
+                      onClick={closeMenu}
                       className="text-stone-800 hover:text-[#004C98] text-2xl font-serif tracking-widest py-4 block"
                     >
                       {item.label}
@@ -126,7 +149,7 @@ export default function Header() {
                 >
                   <Link
                     to="/book"
-                    onClick={() => setIsOpen(false)}
+                    onClick={closeMenu}
                     className="bg-[#E2725B] text-white py-5 w-full text-center block hover:bg-[#c55b45] text-sm uppercase tracking-[0.2em] font-bold shadow-lg"
                   >
                     {t('nav.book')}
@@ -138,8 +161,9 @@ export default function Header() {
                 <button
                   onClick={toggleLanguage}
                   className="flex items-center justify-center w-full space-x-3 text-stone-500 hover:text-stone-800 transition-colors py-4"
+                  aria-label={language === 'en' ? 'Switch to Greek' : 'Switch to English'}
                 >
-                  <Globe className="w-5 h-5" />
+                  <Globe className="w-5 h-5" aria-hidden="true" />
                   <span className="text-sm font-bold tracking-widest uppercase">
                     {language === 'en' ? 'Ελληνικά' : 'English'}
                   </span>

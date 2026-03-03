@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { Cookie, X } from 'lucide-react';
+import { Cookie } from 'lucide-react';
 
 export default function CookieConsent() {
   const { language } = useLanguage();

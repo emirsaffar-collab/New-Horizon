@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
 
 type Language = 'en' | 'el';
 
@@ -52,11 +52,19 @@ const translations: Record<Language, Record<string, string>> = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>(() => {
+    const saved = localStorage.getItem('language');
+    return (saved === 'en' || saved === 'el') ? saved : 'en';
+  });
 
-  const t = (key: string) => {
+  const setLanguage = useCallback((lang: Language) => {
+    localStorage.setItem('language', lang);
+    setLanguageState(lang);
+  }, []);
+
+  const t = useCallback((key: string) => {
     return translations[language][key] || key;
-  };
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
