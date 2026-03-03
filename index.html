@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#E2725B" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://emirsaffar-collab.github.io/New-Horizon/" />
@@ -20,6 +20,8 @@
     <meta property="og:title" content="New Horizon Villas | Luxury Vacation Rental in Kea, Greece" />
     <meta property="og:description" content="Experience the closest Cycladic secret to Athens. New Horizon Villas offers a sanctuary of stone and sea in Fotimari, Kea." />
     <meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="New Horizon Villas" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="el_GR" />
@@ -30,10 +32,37 @@
     <meta name="twitter:title" content="New Horizon Villas | Luxury Vacation Rental in Kea, Greece" />
     <meta name="twitter:description" content="Experience the closest Cycladic secret to Athens. A sanctuary of stone and sea in Fotimari, Kea." />
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Hreflang: bilingual SPA (EN/EL served at same URLs) -->
+    <link rel="alternate" hreflang="en" href="https://emirsaffar-collab.github.io/New-Horizon/" />
+    <link rel="alternate" hreflang="el" href="https://emirsaffar-collab.github.io/New-Horizon/" />
+    <link rel="alternate" hreflang="x-default" href="https://emirsaffar-collab.github.io/New-Horizon/" />
+
+    <!-- Geo meta tags -->
+    <meta name="geo.region" content="GR-J" />
+    <meta name="geo.placename" content="Kea, Cyclades, Greece" />
+    <meta name="geo.position" content="37.662572;24.329075" />
+    <meta name="ICBM" content="37.662572, 24.329075" />
+
+    <!-- Author -->
+    <meta name="author" content="New Horizon Villas" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Single Page Apps for GitHub Pages — restores path encoded by 404.html -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
   </body>
 </html>
 

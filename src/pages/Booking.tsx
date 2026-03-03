@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 
 export default function Booking() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   const content = {
     en: {
@@ -46,11 +46,36 @@ export default function Booking() {
         <meta property="og:url" content="https://emirsaffar-collab.github.io/New-Horizon/book" />
         <meta property="og:title" content={c.seoTitle} />
         <meta property="og:description" content={c.seoDesc} />
-        
+        <meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
         {/* Twitter */}
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={c.seoTitle} />
         <meta name="twitter:description" content={c.seoDesc} />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://emirsaffar-collab.github.io/New-Horizon/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": language === 'en' ? "Book" : "Κράτηση",
+                "item": "https://emirsaffar-collab.github.io/New-Horizon/book"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 md:mb-16">
         <motion.h1 
@@ -64,7 +89,7 @@ export default function Booking() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-[#E2725B] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[9px] sm:text-[10px] font-bold mb-8"
+          className="text-[#E2725B] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-xs sm:text-[11px] font-bold mb-8"
         >
           {c.subtitle}
         </motion.p>

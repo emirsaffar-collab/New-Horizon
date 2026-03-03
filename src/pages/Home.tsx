@@ -37,7 +37,30 @@ export default function Home() {
       locationText: "High above the Aegean, where the sky meets the sea. A place to disconnect from the noise and reconnect with the horizon.",
       reviews: "What our guests say",
       review1: "A masterpiece of silence. The view left us breathless.",
-      reviewAuthor1: "Elena & Marc, Zurich"
+      reviewAuthor1: "Elena & Marc, Zurich",
+      faqTitle: "Frequently Asked Questions",
+      faqs: [
+        {
+          q: "How far is Kea (Tzia) from Athens?",
+          a: "Kea is just one hour by ferry from Lavrio port, which is approximately 50 km from central Athens. New Horizon Villas is 3 km from Korissia, the island's main port."
+        },
+        {
+          q: "What type of vehicle do I need to reach the villa?",
+          a: "The final 1.5 km to the villa is an unpaved dirt road. We strongly recommend renting a vehicle with higher clearance — an SUV, Jeep, or 4×4. Small city cars are not suitable."
+        },
+        {
+          q: "How many guests can stay at New Horizon Villas?",
+          a: "New Horizon Villas accommodates up to 6 guests across 3 bedrooms."
+        },
+        {
+          q: "Can I book directly without using Airbnb or Booking.com?",
+          a: "Yes. Direct booking is available and comes with the best rate guarantee. Contact us at stay@newhorizonvillas.gr or via WhatsApp. The villa is also listed on Airbnb and Booking.com."
+        },
+        {
+          q: "What is the Climate Crisis Resilience Fee?",
+          a: "The Climate Crisis Resilience Fee (€10–€15 per night) is a mandatory charge required by Greek law, applicable to all short-term rental properties in Greece."
+        }
+      ]
     },
     el: {
       seoTitle: "New Horizon Villas | Πολυτελής Ενοικίαση στην Κέα",
@@ -59,7 +82,30 @@ export default function Home() {
       locationText: "Ψηλά πάνω από το Αιγαίο, εκεί που ο ουρανός συναντά τη θάλασσα. Ένα μέρος για να αποσυνδεθείτε από το θόρυβο και να επανασυνδεθείτε με τον ορίζοντα.",
       reviews: "Τι λένε οι επισκέπτες μας",
       review1: "Ένα αριστούργημα σιωπής. Η θέα μας άφησε άφωνους.",
-      reviewAuthor1: "Έλενα & Μαρκ, Ζυρίχη"
+      reviewAuthor1: "Έλενα & Μαρκ, Ζυρίχη",
+      faqTitle: "Συχνές Ερωτήσεις",
+      faqs: [
+        {
+          q: "Πόσο μακριά είναι η Κέα (Τζιά) από την Αθήνα;",
+          a: "Η Κέα απέχει μόλις μία ώρα με πλοίο από το λιμάνι του Λαυρίου, το οποίο βρίσκεται περίπου 50 χλμ. από το κέντρο της Αθήνας. Το New Horizon Villas βρίσκεται 3 χλμ. από την Κορησσία, το κύριο λιμάνι του νησιού."
+        },
+        {
+          q: "Τι είδους όχημα χρειάζομαι για να φτάσω στη βίλα;",
+          a: "Τα τελευταία 1,5 χλμ. προς τη βίλα είναι χωματόδρομος. Συνιστούμε ανεπιφύλακτα την ενοικίαση οχήματος με μεγαλύτερο ύψος — SUV, Jeep ή 4×4. Τα μικρά αυτοκίνητα πόλης δεν είναι κατάλληλα."
+        },
+        {
+          q: "Πόσοι επισκέπτες μπορούν να φιλοξενηθούν στο New Horizon Villas;",
+          a: "Το New Horizon Villas φιλοξενεί έως 6 επισκέπτες σε 3 υπνοδωμάτια."
+        },
+        {
+          q: "Μπορώ να κάνω απευθείας κράτηση χωρίς Airbnb ή Booking.com;",
+          a: "Ναι. Η απευθείας κράτηση είναι διαθέσιμη και συνοδεύεται από εγγύηση καλύτερης τιμής. Επικοινωνήστε μαζί μας στο stay@newhorizonvillas.gr ή μέσω WhatsApp. Η βίλα είναι επίσης καταχωρισμένη στο Airbnb και το Booking.com."
+        },
+        {
+          q: "Τι είναι το Τέλος Ανθεκτικότητας στην Κλιματική Κρίση;",
+          a: "Το Τέλος Ανθεκτικότητας στην Κλιματική Κρίση (€10–€15 ανά διανυκτέρευση) είναι υποχρεωτική χρέωση που ορίζεται από την ελληνική νομοθεσία για όλα τα βραχυπρόθεσμα ενοίκια στην Ελλάδα."
+        }
+      ]
     }
   };
 
@@ -78,7 +124,9 @@ export default function Home() {
         <meta property="og:title" content={c.seoTitle} />
         <meta property="og:description" content={c.seoDesc} />
         <meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" />
-        
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={c.seoTitle} />
@@ -91,7 +139,7 @@ export default function Home() {
             "@type": "VacationRental",
             "name": "New Horizon Villas",
             "description": c.seoDesc,
-            "url": "https://newhorizonvillas.gr",
+            "url": "https://emirsaffar-collab.github.io/New-Horizon/",
             "image": [
               "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80",
               "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1920&q=80"
@@ -154,6 +202,39 @@ export default function Home() {
             }
           })}
         </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "New Horizon Villas",
+            "url": "https://emirsaffar-collab.github.io/New-Horizon/",
+            "email": "stay@newhorizonvillas.gr",
+            "logo": "https://emirsaffar-collab.github.io/New-Horizon/favicon.svg",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Fotimari, Kea",
+              "addressRegion": "Cyclades",
+              "addressCountry": "GR"
+            },
+            "areaServed": "GR"
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": c.faqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+              }
+            }))
+          })}
+        </script>
       </Helmet>
       {/* Hero Section */}
       <section ref={heroRef} className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -169,13 +250,15 @@ export default function Home() {
               transition={{ duration: 10, ease: "easeOut" }}
               className="w-full h-full"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80" 
+              <img
+                src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80"
                 srcSet="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=640&q=80 640w,
                         https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1280&q=80 1280w,
                         https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80 1920w"
                 sizes="100vw"
-                alt="New Horizon Villas luxury Mediterranean property with panoramic Aegean Sea views at sunset in Kea, Greece" 
+                alt="New Horizon Villas luxury Mediterranean property with panoramic Aegean Sea views at sunset in Kea, Greece"
+                width={1920}
+                height={1280}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
                 fetchpriority="high"
@@ -239,19 +322,19 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border border-stone-100 divide-x divide-y md:divide-y-0 divide-stone-100">
             <div className="flex flex-col items-center space-y-3 md:space-y-4 p-6 md:p-10 hover:bg-stone-50 transition-colors duration-500">
               <Sun className="w-8 h-8 md:w-8 md:h-8 text-[#E2725B] flex-shrink-0" strokeWidth={1} aria-hidden="true" />
-              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.view}</span>
+              <span className="text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.view}</span>
             </div>
             <div className="flex flex-col items-center space-y-3 md:space-y-4 p-6 md:p-10 hover:bg-stone-50 transition-colors duration-500">
               <Wind className="w-8 h-8 md:w-8 md:h-8 text-[#556B2F] flex-shrink-0" strokeWidth={1} aria-hidden="true" />
-              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.nature}</span>
+              <span className="text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.nature}</span>
             </div>
             <div className="flex flex-col items-center space-y-3 md:space-y-4 p-6 md:p-10 hover:bg-stone-50 transition-colors duration-500">
               <Anchor className="w-8 h-8 md:w-8 md:h-8 text-[#004C98] flex-shrink-0" strokeWidth={1} aria-hidden="true" />
-              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.design}</span>
+              <span className="text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.design}</span>
             </div>
             <div className="flex flex-col items-center space-y-3 md:space-y-4 p-6 md:p-10 hover:bg-stone-50 transition-colors duration-500">
               <MapPin className="w-8 h-8 md:w-8 md:h-8 text-stone-300 flex-shrink-0" strokeWidth={1} aria-hidden="true" />
-              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.privacy}</span>
+              <span className="text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.privacy}</span>
             </div>
           </div>
         </div>
@@ -323,9 +406,31 @@ export default function Home() {
           <blockquote className="font-serif text-2xl sm:text-3xl md:text-4xl text-stone-800 italic mb-8 md:mb-10 leading-relaxed tracking-tight px-4">
             "{c.review1}"
           </blockquote>
-          <cite className="not-italic text-[9px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-stone-400 font-bold block">
+          <cite className="not-italic text-xs sm:text-[11px] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-stone-400 font-bold block">
             — {c.reviewAuthor1}
           </cite>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 md:py-20 bg-stone-50" aria-label={c.faqTitle}>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-stone-800 text-center mb-10 md:mb-12">
+            {c.faqTitle}
+          </h2>
+          <div className="space-y-2">
+            {c.faqs.map((faq, idx) => (
+              <details key={idx} className="group bg-white border border-stone-100 rounded-sm overflow-hidden">
+                <summary className="flex items-center justify-between px-5 md:px-6 py-4 md:py-5 cursor-pointer list-none font-medium text-stone-800 hover:text-[#004C98] transition-colors text-sm md:text-base">
+                  <span>{faq.q}</span>
+                  <span className="ml-4 flex-shrink-0 text-2xl text-stone-300 group-open:rotate-45 transition-transform duration-200 select-none leading-none" aria-hidden="true">+</span>
+                </summary>
+                <p className="px-5 md:px-6 pb-5 text-stone-600 text-sm md:text-base leading-relaxed font-light border-t border-stone-50 pt-4">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
     </div>

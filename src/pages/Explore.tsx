@@ -1,11 +1,11 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Map, Coffee, Sun, Waves, Clock, Facebook, Twitter, MessageCircle, Share2 } from 'lucide-react';
+import { Map, Coffee, Waves, Clock, Facebook, Twitter, MessageCircle } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 
 export default function Explore() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   const content = {
     en: {
@@ -17,7 +17,6 @@ export default function Explore() {
       sections: [
         {
           title: "Sun & Sea: Our Coastal Gems",
-          icon: <Waves className="w-6 h-6 text-[#004C98]" />,
           intro: "Kea’s deeply folded coastline hides dozens of pristine beaches, ranging from fully organized sandy bays to wild, secluded coves.",
           items: [
             { 
@@ -44,7 +43,6 @@ export default function Explore() {
         },
         {
           title: "Gastronomy: From Dockside to Hilltop",
-          icon: <Coffee className="w-6 h-6 text-[#E2725B]" />,
           intro: "Kea's culinary scene is a sophisticated fusion of traditional Cycladic flavors and modern Mediterranean technique.",
           items: [
             { 
@@ -71,7 +69,6 @@ export default function Explore() {
         },
         {
           title: "Culture & Adventure",
-          icon: <Map className="w-6 h-6 text-[#556B2F]" />,
           intro: "Beyond the beaches, Kea is a playground for hikers, history enthusiasts, and advanced divers.",
           items: [
             { name: "The Ancient Trails (Τα Αρχαία Μονοπάτια)", desc: "Explore 81 km of marked, stone-paved ancient pathways. Trails range from easy family strolls to challenging treks; Route 1 (Ioulida to Karthea) is a moderate 2-hour hike through lush oak forests." },
@@ -100,7 +97,6 @@ export default function Explore() {
       sections: [
         {
           title: "Ήλιος & Θάλασσα: Τα Διαμάντια της Ακτογραμμής μας",
-          icon: <Waves className="w-6 h-6 text-[#004C98]" />,
           intro: "Η δαντελωτή ακτογραμμή της Κέας κρύβει δεκάδες παρθένες παραλίες, από πλήρως οργανωμένους αμμώδεις κόλπους μέχρι άγριους, απομονωμένους ορμίσκους.",
           items: [
             { 
@@ -127,7 +123,6 @@ export default function Explore() {
         },
         {
           title: "Γαστρονομία: Από το Λιμάνι ως τη Χώρα",
-          icon: <Coffee className="w-6 h-6 text-[#E2725B]" />,
           intro: "Η γαστρονομική σκηνή της Τζιας είναι μια εκλεπτυσμένη μίξη παραδοσιακών κυκλαδίτικων γεύσεων και σύγχρονων μεσογειακών τεχνικών.",
           items: [
             { 
@@ -154,7 +149,6 @@ export default function Explore() {
         },
         {
           title: "Πολιτισμός & Περιπέτεια",
-          icon: <Map className="w-6 h-6 text-[#556B2F]" />,
           intro: "Πέρα από τις παραλίες, η Κέα είναι ένας παράδεισος για πεζοπόρους, λάτρεις της ιστορίας και έμπειρους δύτες.",
           items: [
             { name: "Τα Αρχαία Μονοπάτια (The Ancient Trails)", desc: "Εξερευνήστε 81 χλμ. σηματοδοτημένων, λιθόστρωτων αρχαίων μονοπατιών. Οι διαδρομές κυμαίνονται από εύκολους οικογενειακούς περιπάτους έως απαιτητικές πεζοπορίες. Η Διαδρομή 1 (Ιουλίδα προς Καρθαία) είναι μια μέτρια πεζοπορία 2 ωρών μέσα από δάση βελανιδιάς." },
@@ -178,6 +172,12 @@ export default function Explore() {
 
   const c = language === 'en' ? content.en : content.el;
 
+  const sectionIcons = [
+    <Waves key="waves" className="w-6 h-6 text-[#004C98]" aria-hidden="true" />,
+    <Coffee key="coffee" className="w-6 h-6 text-[#E2725B]" aria-hidden="true" />,
+    <Map key="map" className="w-6 h-6 text-[#556B2F]" aria-hidden="true" />,
+  ];
+
   return (
     <div className="bg-stone-50 min-h-screen pb-20">
       <Helmet>
@@ -191,13 +191,36 @@ export default function Explore() {
         <meta property="og:title" content={c.seoTitle} />
         <meta property="og:description" content={c.seoDesc} />
         <meta property="og:image" content="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80" />
-        
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={c.seoTitle} />
         <meta name="twitter:description" content={c.seoDesc} />
         <meta name="twitter:image" content="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80" />
         
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://emirsaffar-collab.github.io/New-Horizon/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": language === 'en' ? "Explore Kea" : "Εξερευνήστε την Κέα",
+                "item": "https://emirsaffar-collab.github.io/New-Horizon/explore"
+              }
+            ]
+          })}
+        </script>
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -230,9 +253,11 @@ export default function Explore() {
           transition={{ duration: 1.5, ease: "easeOut" }}
           className="absolute inset-0 z-0"
         >
-          <img 
-            src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1920&q=80" 
-            alt="Beautiful Kea island coastline in the Cyclades, Greece, showcasing pristine beaches and crystal-clear Aegean waters" 
+          <img
+            src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1920&q=80"
+            alt="Beautiful Kea island coastline in the Cyclades, Greece, showcasing pristine beaches and crystal-clear Aegean waters"
+            width={1920}
+            height={1200}
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
             loading="eager"
@@ -272,7 +297,7 @@ export default function Explore() {
           <div key={idx} className="space-y-8 md:space-y-12">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="p-3 md:p-4 bg-white rounded-full shadow-sm border border-stone-100">
-                {section.icon}
+                {sectionIcons[idx]}
               </div>
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-stone-800 px-4">{section.title}</h2>
               <p className="max-w-2xl text-stone-500 font-light text-sm sm:text-base px-4">{section.intro}</p>
@@ -294,8 +319,10 @@ export default function Explore() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8 }}
-                      src={`https://picsum.photos/seed/${item.name.split('(')[0].trim().toLowerCase().replace(/\s+/g, '_')}/600/450`} 
+                      src={`https://picsum.photos/seed/${item.name.split('(')[0].trim().toLowerCase().replace(/\s+/g, '_')}/600/450`}
                       alt={item.name}
+                      width={600}
+                      height={450}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
@@ -306,45 +333,45 @@ export default function Explore() {
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-stone-50">
                     <div className="flex flex-wrap gap-2">
                       {item.amenities && item.amenities.map((amenity, aIdx) => (
-                        <span key={aIdx} className="text-[8px] sm:text-[9px] uppercase tracking-widest px-2 py-1 bg-stone-50 text-stone-400 border border-stone-100 rounded-full">
+                        <span key={aIdx} className="text-[11px] sm:text-xs uppercase tracking-widest px-2 py-1 bg-stone-50 text-stone-400 border border-stone-100 rounded-full">
                           {amenity}
                         </span>
                       ))}
                     </div>
                     
-                    <div className="flex items-center space-x-1.5 sm:space-x-2 ml-2">
-                      <button 
+                    <div className="flex items-center space-x-0 sm:space-x-1 ml-2">
+                      <button
                         onClick={() => {
                           const url = window.location.href;
                           const text = `${item.name} - ${item.desc}`;
                           window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`, '_blank');
                         }}
-                        className="p-1.5 text-stone-300 hover:text-[#004C98] transition-colors"
+                        className="p-2.5 text-stone-300 hover:text-[#004C98] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                         title="Share on Facebook"
                       >
-                        <Facebook className="w-3.5 h-3.5" />
+                        <Facebook className="w-4 h-4" />
                       </button>
-                      <button 
+                      <button
                         onClick={() => {
                           const url = window.location.href;
                           const text = `${item.name} - ${item.desc}`;
                           window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank');
                         }}
-                        className="p-1.5 text-stone-300 hover:text-[#004C98] transition-colors"
+                        className="p-2.5 text-stone-300 hover:text-[#004C98] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                         title="Share on Twitter"
                       >
-                        <Twitter className="w-3.5 h-3.5" />
+                        <Twitter className="w-4 h-4" />
                       </button>
-                      <button 
+                      <button
                         onClick={() => {
                           const url = window.location.href;
                           const text = `${item.name}: ${item.desc}`;
                           window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
                         }}
-                        className="p-1.5 text-stone-300 hover:text-[#004C98] transition-colors"
+                        className="p-2.5 text-stone-300 hover:text-[#004C98] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                         title="Share on WhatsApp"
                       >
-                        <MessageCircle className="w-3.5 h-3.5" />
+                        <MessageCircle className="w-4 h-4" />
                       </button>
                     </div>
                   </div>

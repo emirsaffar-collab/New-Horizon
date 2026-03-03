@@ -1,5 +1,4 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
-import { Link } from 'react-router-dom';
 
 interface Props {
   children: ReactNode;
@@ -43,14 +42,14 @@ export class ErrorBoundary extends Component<Props, State> {
               >
                 Refresh Page
               </button>
-              <Link
-                to="/"
+              <a
+                href="."
                 className="border-2 border-[#004C98] text-[#004C98] px-8 py-4 text-sm uppercase tracking-widest hover:bg-[#004C98] hover:text-white transition-colors min-h-[48px]"
               >
                 Go Home
-              </Link>
+              </a>
             </div>
-            {process.env.NODE_ENV === 'development' && this.state.error && (
+            {import.meta.env.DEV && this.state.error && (
               <div className="mt-8 p-4 bg-red-50 border border-red-200 rounded text-left">
                 <p className="text-sm font-mono text-red-800 mb-2">
                   <strong>Error:</strong> {this.state.error.message}

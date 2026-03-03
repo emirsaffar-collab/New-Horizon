@@ -21,22 +21,22 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-white text-xs md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold mb-6 opacity-50">Legal Compliance</h4>
-            <p className="mb-2 font-mono text-xs md:text-[10px] text-stone-500 tracking-tighter">{t('footer.ama')}</p>
+            <h4 className="text-white text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold mb-6 opacity-50">Legal Compliance</h4>
+            <p className="mb-2 font-mono text-[11px] md:text-xs text-stone-500 tracking-tighter">{t('footer.ama')}</p>
             <p className="text-xs md:text-[11px] leading-relaxed max-w-xs text-stone-500 italic">{t('footer.climate_fee')}</p>
           </div>
 
           {/* Trust */}
           <div>
-            <h4 className="text-white text-xs md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold mb-6 opacity-50">Secure Booking</h4>
+            <h4 className="text-white text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold mb-6 opacity-50">Secure Booking</h4>
             <div className="flex flex-col space-y-4">
               <div className="flex items-center space-x-3">
                 <ShieldCheck className="w-4 h-4 text-[#556B2F]" strokeWidth={1.5} aria-hidden="true" />
-                <span className="text-xs md:text-[10px] uppercase tracking-widest">SSL Secured Connection</span>
+                <span className="text-[11px] md:text-xs uppercase tracking-widest">SSL Secured Connection</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CreditCard className="w-4 h-4 text-[#556B2F]" strokeWidth={1.5} aria-hidden="true" />
-                <span className="text-xs md:text-[10px] uppercase tracking-widest">Verified Payment Gateway</span>
+                <span className="text-[11px] md:text-xs uppercase tracking-widest">Verified Payment Gateway</span>
               </div>
             </div>
           </div>
