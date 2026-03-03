@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Map, Coffee, Waves, Clock, Facebook, Twitter, MessageCircle } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 export default function Explore() {
   const { language } = useLanguage();
@@ -86,7 +87,33 @@ export default function Explore() {
         { dest: "Korissia (Port)", dist: "3 km", feat: "Ferry access, bakeries, supermarkets" },
         { dest: "Otzias Beach", dist: "5 km", feat: "Wind-protected, shallow water, family-friendly" },
         { dest: "Ioulida (Chora)", dist: "6 km", feat: "Historic capital, ancient pathways, traditional tavernas" }
-      ]
+      ],
+      seasonTitle: "When to Come",
+      seasons: [
+        {
+          name: "May – June",
+          badge: "Recommended",
+          badgeColor: "bg-[#556B2F]",
+          desc: "The island is lush and green. Water temperature reaches 22°C. Ferry crowds are minimal. Restaurants are open but not overwhelmed. This is when Kea shows her most photogenic self.",
+          highlight: "Best for: Hiking, Photography, Tranquility"
+        },
+        {
+          name: "July – August",
+          badge: "Peak Season",
+          badgeColor: "bg-[#004C98]",
+          desc: "The Aegean reaches its deepest blue. All venues are open. Warm nights on the terrace under a sky of stars. Book 3–6 months in advance — availability is very limited.",
+          highlight: "Best for: Swimming, Nightlife, Full Island Experience"
+        },
+        {
+          name: "September – October",
+          badge: "Hidden Gem",
+          badgeColor: "bg-[#E2725B]",
+          desc: "Our personal favourite. The summer crowds are gone but the sea remains warm (25°C). Restaurants are at their best — unhurried service, local ingredients at peak. Octopus season.",
+          highlight: "Best for: Gastronomy, Peaceful Exploration, Value"
+        }
+      ],
+      bookingCta: "Inspired? New Horizon Villas is 2 km from Gialiskari Beach and 1 km from Vourkari Marina.",
+      bookingCtaBtn: "Check Availability"
     },
     el: {
       seoTitle: "Εξερευνήστε την Κέα (Τζιά) | Παραλίες, Φαγητό & Πεζοπορία",
@@ -166,7 +193,33 @@ export default function Explore() {
         { dest: "Κορησσία (Λιμάνι)", dist: "3 km", feat: "Πρόσβαση με πλοίο, φούρνοι, σούπερ μάρκετ" },
         { dest: "Παραλία Οτζιάς", dist: "5 km", feat: "Προστατευμένη από τον άνεμο, ρηχά νερά, ιδανική για οικογένειες" },
         { dest: "Ιουλίδα (Χώρα)", dist: "6 km", feat: "Ιστορική πρωτεύουσα, αρχαία μονοπάτια, παραδοσιακές ταβέρνες" }
-      ]
+      ],
+      seasonTitle: "Πότε να Έρθετε",
+      seasons: [
+        {
+          name: "Μάιος – Ιούνιος",
+          badge: "Συνιστάται",
+          badgeColor: "bg-[#556B2F]",
+          desc: "Το νησί είναι καταπράσινο. Η θερμοκρασία νερού φτάνει τους 22°C. Τα πλοία δεν είναι γεμάτα. Τα εστιατόρια είναι ανοιχτά αλλά όχι κατάμεστα. Τότε η Κέα δείχνει την πιο φωτογενή πλευρά της.",
+          highlight: "Ιδανικό για: Πεζοπορία, Φωτογραφία, Ηρεμία"
+        },
+        {
+          name: "Ιούλιος – Αύγουστος",
+          badge: "Κορυφαία Σεζόν",
+          badgeColor: "bg-[#004C98]",
+          desc: "Το Αιγαίο στο βαθύτερο μπλε του. Όλα τα μέρη είναι ανοιχτά. Ζεστές νύχτες στη βεράντα κάτω από αστερένιο ουρανό. Κάντε κράτηση 3–6 μήνες νωρίτερα — η διαθεσιμότητα είναι πολύ περιορισμένη.",
+          highlight: "Ιδανικό για: Κολύμβηση, Νυχτερινή Ζωή, Πλήρη Εμπειρία"
+        },
+        {
+          name: "Σεπτέμβριος – Οκτώβριος",
+          badge: "Κρυμμένο Διαμάντι",
+          badgeColor: "bg-[#E2725B]",
+          desc: "Η αγαπημένη μας εποχή. Τα καλοκαιρινά πλήθη έφυγαν αλλά η θάλασσα παραμένει ζεστή (25°C). Τα εστιατόρια στο καλύτερό τους — άνετη εξυπηρέτηση, τοπικά υλικά στη κορύφωσή τους. Εποχή χταποδιού.",
+          highlight: "Ιδανικό για: Γαστρονομία, Ήρεμη Εξερεύνηση, Αξία"
+        }
+      ],
+      bookingCta: "Σας ενέπνευσε; Το New Horizon Villas βρίσκεται 2 χλμ. από τη Γιαλισκάρι και 1 χλμ. από τη Μαρίνα Βουρκάρι.",
+      bookingCtaBtn: "Ελέγξτε Διαθεσιμότητα"
     }
   };
 
@@ -425,6 +478,40 @@ export default function Explore() {
               </tbody>
             </table>
           </div>
+        </div>
+
+        {/* When to Visit */}
+        <div className="pb-8">
+          <div className="text-center mb-10 md:mb-12">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-stone-800">{c.seasonTitle}</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {c.seasons.map((season, i) => (
+              <div key={i} className="bg-white border border-stone-100 rounded-sm p-6 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-serif text-xl text-stone-800">{season.name}</h3>
+                  <span className={`text-white text-[10px] uppercase tracking-widest px-2 py-1 rounded-sm font-bold ${season.badgeColor}`}>
+                    {season.badge}
+                  </span>
+                </div>
+                <p className="text-stone-600 text-sm leading-relaxed font-light mb-4">{season.desc}</p>
+                <p className="text-[11px] uppercase tracking-wider text-stone-400 border-t border-stone-100 pt-4">{season.highlight}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Booking CTA Strip */}
+      <div className="bg-[#004C98] text-white py-12 md:py-16 px-4 text-center">
+        <div className="max-w-2xl mx-auto">
+          <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6 font-light">{c.bookingCta}</p>
+          <Link
+            to="/book"
+            className="inline-flex items-center bg-[#E2725B] text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-[#c55b45] transition-colors shadow-lg min-h-[48px]"
+          >
+            {c.bookingCtaBtn}
+          </Link>
         </div>
       </div>
     </div>
