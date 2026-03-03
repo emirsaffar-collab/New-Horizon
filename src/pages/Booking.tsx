@@ -35,16 +35,16 @@ export default function Booking() {
   const c = language === 'en' ? content.en : content.el;
 
   return (
-    <div className="bg-white min-h-screen py-24">
+    <div className="bg-white min-h-screen py-20 md:py-24">
       <Helmet>
         <title>{c.seoTitle}</title>
         <meta name="description" content={c.seoDesc} />
       </Helmet>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 md:mb-16">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="font-serif text-4xl md:text-5xl text-stone-800 mb-6"
+          className="font-serif text-3xl sm:text-4xl md:text-5xl text-stone-800 mb-6"
         >
           {c.title}
         </motion.h1>
@@ -52,7 +52,7 @@ export default function Booking() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-[#E2725B] uppercase tracking-[0.3em] text-[10px] font-bold mb-8"
+          className="text-[#E2725B] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[9px] sm:text-[10px] font-bold mb-8"
         >
           {c.subtitle}
         </motion.p>
@@ -60,31 +60,31 @@ export default function Booking() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-stone-600 max-w-2xl mx-auto leading-relaxed font-light text-lg"
+          className="text-stone-600 max-w-2xl mx-auto leading-relaxed font-light text-base sm:text-lg px-2 sm:px-0"
         >
           {c.intro}
         </motion.p>
       </div>
 
       {/* Booking Widget Placeholder */}
-      <div className="max-w-5xl mx-auto px-4 mb-20">
-        <div className="bg-stone-50 border-2 border-dashed border-stone-200 rounded-lg h-96 flex flex-col items-center justify-center text-stone-400">
-          <Calendar className="w-12 h-12 mb-4 opacity-50" />
-          <span className="text-lg font-medium">{c.widgetPlaceholder}</span>
-          <span className="text-xs mt-2">(Smoobu / Lodgify Integration)</span>
+      <div className="max-w-5xl mx-auto px-4 mb-16 md:mb-20">
+        <div className="bg-stone-50 border-2 border-dashed border-stone-200 rounded-lg h-80 md:h-96 flex flex-col items-center justify-center text-stone-400 p-6">
+          <Calendar className="w-10 h-10 md:w-12 md:h-12 mb-4 opacity-50" />
+          <span className="text-base md:text-lg font-medium text-center">{c.widgetPlaceholder}</span>
+          <span className="text-xs mt-2 text-center">(Smoobu / Lodgify Integration)</span>
         </div>
       </div>
 
       {/* Contact CTA */}
-      <div className="bg-[#004C98] text-white py-16 px-4 text-center">
+      <div className="bg-[#004C98] text-white py-12 md:py-16 px-4 text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="font-serif text-2xl mb-4">{c.contactTitle}</h2>
-          <p className="text-white/80 mb-8 leading-relaxed">{c.contactText}</p>
+          <h2 className="font-serif text-xl md:text-2xl mb-4">{c.contactTitle}</h2>
+          <p className="text-white/80 mb-8 leading-relaxed text-sm md:text-base px-2 sm:px-0">{c.contactText}</p>
           <a 
             href="https://wa.me/306900000000" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center bg-[#25D366] text-white px-8 py-3 rounded-full hover:bg-[#20bd5a] transition-colors font-medium shadow-lg"
+            className="inline-flex items-center bg-[#25D366] text-white px-6 md:px-8 py-3 rounded-full hover:bg-[#20bd5a] transition-colors font-medium shadow-lg text-sm md:text-base min-h-[48px]"
           >
             <MessageCircle className="w-5 h-5 mr-2" />
             {c.whatsappBtn}

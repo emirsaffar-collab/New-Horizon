@@ -53,17 +53,17 @@ export default function Location() {
   const c = language === 'en' ? content.en : content.el;
 
   return (
-    <div className="bg-white min-h-screen pb-20">
+    <div className="bg-white min-h-screen pb-16 md:pb-20">
       <Helmet>
         <title>{c.seoTitle}</title>
         <meta name="description" content={c.seoDesc} />
       </Helmet>
       {/* Header */}
-      <div className="bg-stone-100 py-24 px-4 text-center">
+      <div className="bg-stone-100 py-16 md:py-24 px-4 text-center">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="font-serif text-4xl md:text-5xl text-stone-800 mb-6"
+          className="font-serif text-3xl sm:text-4xl md:text-5xl text-stone-800 mb-6"
         >
           {c.title}
         </motion.h1>
@@ -73,8 +73,8 @@ export default function Location() {
           transition={{ delay: 0.3 }}
           className="flex items-center justify-center text-[#E2725B] space-x-2"
         >
-          <MapPin className="w-5 h-5" />
-          <span className="uppercase tracking-[0.3em] text-[10px] font-bold">{c.subtitle}</span>
+          <MapPin className="w-4 h-4 md:w-5 md:h-5" />
+          <span className="uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[9px] sm:text-[10px] font-bold">{c.subtitle}</span>
         </motion.div>
       </div>
 
@@ -83,18 +83,18 @@ export default function Location() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="bg-white p-8 md:p-16 shadow-2xl rounded-sm border-t-4 border-[#004C98]"
+          className="bg-white p-6 md:p-8 lg:p-16 shadow-2xl rounded-sm border-t-4 border-[#004C98]"
         >
-          <p className="text-lg text-stone-600 leading-relaxed mb-10 font-light">
+          <p className="text-base md:text-lg text-stone-600 leading-relaxed mb-8 md:mb-10 font-light">
             {c.intro}
           </p>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* Privacy Section */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <Navigation className="w-6 h-6 text-[#004C98]" />
-                <h3 className="font-serif text-xl text-stone-800">{c.privacyTitle}</h3>
+                <Navigation className="w-5 h-5 md:w-6 md:h-6 text-[#004C98]" />
+                <h3 className="font-serif text-lg md:text-xl text-stone-800">{c.privacyTitle}</h3>
               </div>
               <p className="text-stone-600 text-sm mb-4 leading-relaxed">
                 {c.privacyText}
@@ -110,10 +110,10 @@ export default function Location() {
             </div>
 
             {/* Vehicle Section */}
-            <div className="bg-stone-50 p-6 rounded-lg border border-stone-100">
+            <div className="bg-stone-50 p-5 md:p-6 rounded-lg border border-stone-100">
               <div className="flex items-center space-x-3 mb-4">
-                <Car className="w-6 h-6 text-[#E2725B]" />
-                <h3 className="font-serif text-xl text-stone-800">{c.vehicleTitle}</h3>
+                <Car className="w-5 h-5 md:w-6 md:h-6 text-[#E2725B]" />
+                <h3 className="font-serif text-lg md:text-xl text-stone-800">{c.vehicleTitle}</h3>
               </div>
               <p className="text-stone-600 text-sm mb-4 leading-relaxed">
                 {c.vehicleText}
@@ -128,9 +128,9 @@ export default function Location() {
       </div>
 
         {/* Map Section */}
-        <div className="mt-16">
-          <h3 className="font-serif text-2xl text-stone-800 mb-6 text-center">{c.mapTitle}</h3>
-          <div className="w-full h-96 bg-stone-200 rounded-sm overflow-hidden shadow-inner grayscale hover:grayscale-0 transition-all duration-500">
+        <div className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
+          <h3 className="font-serif text-xl md:text-2xl text-stone-800 mb-6 text-center">{c.mapTitle}</h3>
+          <div className="w-full h-64 md:h-96 bg-stone-200 rounded-sm overflow-hidden shadow-inner grayscale hover:grayscale-0 transition-all duration-500">
              <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12648.78923456789!2d24.329075!3d37.662572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDM5JzQ1LjMiTiAyNMKwMTknNDQuNyJF!5e0!3m2!1sen!2sgr!4v1620000000000!5m2!1sen!2sgr" 
               width="100%" 
@@ -141,7 +141,7 @@ export default function Location() {
               title="Kea Location Map"
             ></iframe>
           </div>
-          <p className="text-center text-xs text-stone-500 mt-4 uppercase tracking-widest">
+          <p className="text-center text-[10px] sm:text-xs text-stone-500 mt-4 uppercase tracking-widest">
             Coordinates: 37.662572, 24.329075
           </p>
         </div>
