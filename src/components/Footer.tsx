@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Legal */}
           <div>
             <h4 className="text-white text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold mb-6 opacity-50">Legal Compliance</h4>
-            <p className="mb-2 font-mono text-xs md:text-[10px] text-stone-500 tracking-tighter">{t('footer.ama')}</p>
+            <p className="mb-2 font-mono text-[11px] md:text-xs text-stone-500 tracking-tighter">{t('footer.ama')}</p>
             <p className="text-xs md:text-[11px] leading-relaxed max-w-xs text-stone-500 italic">{t('footer.climate_fee')}</p>
           </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Map, Coffee, Sun, Waves, Clock, Facebook, Twitter, MessageCircle, Share2 } from 'lucide-react';
+import { Map, Coffee, Sun, Waves, Clock, Facebook, Twitter, MessageCircle } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 

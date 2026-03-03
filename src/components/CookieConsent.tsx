@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { Cookie, X } from 'lucide-react';
 
@@ -58,9 +59,9 @@ export default function CookieConsent() {
             <h3 className="font-serif text-xl text-stone-800 mb-2">{c.title}</h3>
             <p className="text-sm text-stone-600 leading-relaxed">
               {c.message}{' '}
-              <a href="/privacy" className="text-[#004C98] hover:underline font-medium">
+              <Link to="/privacy" className="text-[#004C98] hover:underline font-medium">
                 {c.learnMore}
-              </a>
+              </Link>
             </p>
           </div>
 

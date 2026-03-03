@@ -64,7 +64,7 @@ export default function Booking() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-[#E2725B] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[9px] sm:text-[10px] font-bold mb-8"
+          className="text-[#E2725B] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-xs sm:text-[11px] font-bold mb-8"
         >
           {c.subtitle}
         </motion.p>

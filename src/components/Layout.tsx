@@ -2,8 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import CookieConsent from './CookieConsent';
-import { Outlet } from 'react-router-dom';
-import { ScrollRestoration } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
 
 export default function Layout() {
   return (
