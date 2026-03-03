@@ -43,12 +43,20 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
-            <button onClick={toggleLanguage} className="flex items-center text-stone-600">
+          <div className="md:hidden flex items-center space-x-2">
+            <button 
+              onClick={toggleLanguage} 
+              className="flex items-center text-stone-600 p-2 min-w-[44px] min-h-[44px] justify-center"
+              aria-label="Toggle language"
+            >
               <span className="text-xs font-bold">{language.toUpperCase()}</span>
             </button>
-            <button onClick={() => setIsOpen(!isOpen)} className="text-stone-800">
-              {isOpen ? <X /> : <Menu />}
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="text-stone-800 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
             </button>
           </div>
         </div>

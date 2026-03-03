@@ -224,11 +224,11 @@ export default function Explore() {
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl">
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-serif text-5xl md:text-7xl text-white mb-6"
+            className="font-serif text-4xl sm:text-5xl md:text-7xl text-white mb-6"
           >
             {c.title}
           </motion.h1>
@@ -236,7 +236,7 @@ export default function Explore() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-[#E2725B] uppercase tracking-[0.4em] text-sm font-bold mb-8"
+            className="text-[#E2725B] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-xs sm:text-sm font-bold mb-8"
           >
             {c.subtitle}
           </motion.p>
@@ -244,25 +244,25 @@ export default function Explore() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="max-w-3xl mx-auto text-white/90 leading-relaxed font-light text-xl md:text-2xl italic"
+            className="max-w-3xl mx-auto text-white/90 leading-relaxed font-light text-lg sm:text-xl md:text-2xl italic px-2 sm:px-0"
           >
             {c.intro}
           </motion.p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 space-y-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 md:mt-16 space-y-16 md:space-y-24">
         {c.sections.map((section, idx) => (
-          <div key={idx} className="space-y-12">
+          <div key={idx} className="space-y-8 md:space-y-12">
             <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 bg-white rounded-full shadow-sm border border-stone-100">
+              <div className="p-3 md:p-4 bg-white rounded-full shadow-sm border border-stone-100">
                 {section.icon}
               </div>
-              <h2 className="font-serif text-3xl md:text-4xl text-stone-800">{section.title}</h2>
-              <p className="max-w-2xl text-stone-500 font-light">{section.intro}</p>
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-stone-800 px-4">{section.title}</h2>
+              <p className="max-w-2xl text-stone-500 font-light text-sm sm:text-base px-4">{section.intro}</p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {section.items.map((item, i) => (
                 <motion.div 
                   key={i} 
@@ -270,9 +270,9 @@ export default function Explore() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="group bg-white p-6 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 border-t border-stone-50"
+                  className="group bg-white p-5 md:p-6 rounded-sm shadow-sm hover:shadow-md transition-all duration-300 border-t border-stone-50"
                 >
-                  <div className="aspect-[4/3] mb-6 overflow-hidden rounded-sm bg-stone-100">
+                  <div className="aspect-[4/3] mb-4 md:mb-6 overflow-hidden rounded-sm bg-stone-100">
                     <motion.img 
                       initial={{ opacity: 0, scale: 1.1 }}
                       whileInView={{ opacity: 1, scale: 1 }}
@@ -284,19 +284,19 @@ export default function Explore() {
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  <h3 className="font-serif text-lg text-stone-800 mb-3 group-hover:text-[#004C98] transition-colors">{item.name}</h3>
+                  <h3 className="font-serif text-base md:text-lg text-stone-800 mb-3 group-hover:text-[#004C98] transition-colors leading-snug">{item.name}</h3>
                   <p className="text-sm text-stone-600 leading-relaxed font-light mb-4">{item.desc}</p>
                   
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-stone-50">
                     <div className="flex flex-wrap gap-2">
                       {item.amenities && item.amenities.map((amenity, aIdx) => (
-                        <span key={aIdx} className="text-[9px] uppercase tracking-widest px-2 py-1 bg-stone-50 text-stone-400 border border-stone-100 rounded-full">
+                        <span key={aIdx} className="text-[8px] sm:text-[9px] uppercase tracking-widest px-2 py-1 bg-stone-50 text-stone-400 border border-stone-100 rounded-full">
                           {amenity}
                         </span>
                       ))}
                     </div>
                     
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-1.5 sm:space-x-2 ml-2">
                       <button 
                         onClick={() => {
                           const url = window.location.href;
@@ -339,13 +339,28 @@ export default function Explore() {
         ))}
 
         {/* Logistics Table */}
-        <div className="bg-white p-8 md:p-12 rounded-sm shadow-sm border border-stone-100">
-          <div className="flex items-center space-x-4 mb-10 border-b border-stone-100 pb-6">
-            <Clock className="w-8 h-8 text-[#004C98]" />
-            <h2 className="font-serif text-2xl md:text-3xl text-stone-800">{c.logisticsTitle}</h2>
+        <div className="bg-white p-6 md:p-8 lg:p-12 rounded-sm shadow-sm border border-stone-100 mb-16">
+          <div className="flex items-center space-x-4 mb-8 md:mb-10 border-b border-stone-100 pb-6">
+            <Clock className="w-6 h-6 md:w-8 md:h-8 text-[#004C98]" />
+            <h2 className="font-serif text-xl md:text-2xl lg:text-3xl text-stone-800">{c.logisticsTitle}</h2>
           </div>
           
-          <div className="overflow-x-auto">
+          {/* Mobile View: Card Layout */}
+          <div className="md:hidden space-y-4" role="list">
+            {c.logisticsItems.map((item, i) => (
+              <div key={i} className="p-4 border border-stone-100 rounded bg-stone-50" role="listitem">
+                <div className="font-medium text-stone-800 mb-2">{item.dest}</div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs uppercase tracking-widest text-stone-400">Distance</span>
+                  <span className="text-[#E2725B] font-mono text-sm">{item.dist}</span>
+                </div>
+                <div className="text-stone-600 text-sm font-light italic pt-2 border-t border-stone-200">{item.feat}</div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Desktop View: Table */}
+          <div className="hidden md:block overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-stone-200">
