@@ -346,9 +346,9 @@ export default function Explore() {
           </div>
           
           {/* Mobile View: Card Layout */}
-          <div className="md:hidden space-y-4">
+          <div className="md:hidden space-y-4" role="list">
             {c.logisticsItems.map((item, i) => (
-              <div key={i} className="p-4 border border-stone-100 rounded bg-stone-50">
+              <div key={i} className="p-4 border border-stone-100 rounded bg-stone-50" role="listitem">
                 <div className="font-medium text-stone-800 mb-2">{item.dest}</div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs uppercase tracking-widest text-stone-400">Distance</span>
