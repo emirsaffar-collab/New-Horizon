@@ -30,7 +30,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+], {
+  basename: '/New-Horizon',
+});
 
 export default function App() {
   return (
