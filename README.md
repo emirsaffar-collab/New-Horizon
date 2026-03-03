@@ -43,9 +43,19 @@ This app is configured to deploy to GitHub Pages at `https://emirsaffar-collab.g
 The following configuration is already set up:
 - Base path: `/New-Horizon/` in `vite.config.ts`
 - React Router basename: `/New-Horizon` in `src/App.tsx`
+- GitHub Actions workflow in `.github/workflows/deploy.yml`
 
-To deploy:
-1. Build the app: `npm run build`
-2. Deploy the `dist` folder to GitHub Pages
+### Automatic Deployment
+
+The app automatically deploys to GitHub Pages when changes are pushed to the `main` branch. The GitHub Actions workflow:
+1. Builds the app using `npm run build`
+2. Deploys the `dist` folder to GitHub Pages
+
+### Manual Deployment
+
+You can also trigger a deployment manually:
+1. Go to the "Actions" tab in the GitHub repository
+2. Select the "Deploy to GitHub Pages" workflow
+3. Click "Run workflow"
 
 The app will be available at: https://emirsaffar-collab.github.io/New-Horizon/
