@@ -201,6 +201,27 @@ export default function Explore() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://emirsaffar-collab.github.io/New-Horizon/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": language === 'en' ? "Explore Kea" : "Εξερευνήστε την Κέα",
+                "item": "https://emirsaffar-collab.github.io/New-Horizon/explore"
+              }
+            ]
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "ItemList",
             "itemListElement": c.sections.flatMap((section, sIdx) => 
               section.items.map((item, iIdx) => ({

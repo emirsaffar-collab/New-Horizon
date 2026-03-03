@@ -64,11 +64,62 @@ export default function Location() {
         <meta property="og:url" content="https://emirsaffar-collab.github.io/New-Horizon/location" />
         <meta property="og:title" content={c.seoTitle} />
         <meta property="og:description" content={c.seoDesc} />
-        
+        <meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" />
+
         {/* Twitter */}
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={c.seoTitle} />
         <meta name="twitter:description" content={c.seoDesc} />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Place",
+            "name": "New Horizon Villas — Fotimari, Kea",
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 37.662572,
+              "longitude": 24.329075
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Fotimari, Kea",
+              "addressRegion": "Cyclades",
+              "addressCountry": "GR"
+            },
+            "hasMap": "https://www.google.com/maps/place/37.662572,24.329075",
+            "containedInPlace": {
+              "@type": "Island",
+              "name": "Kea (Tzia)",
+              "containedInPlace": {
+                "@type": "Country",
+                "name": "Greece"
+              }
+            }
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://emirsaffar-collab.github.io/New-Horizon/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": language === 'en' ? "Location" : "Τοποθεσία",
+                "item": "https://emirsaffar-collab.github.io/New-Horizon/location"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       {/* Header */}
       <div className="bg-stone-100 py-16 md:py-24 px-4 text-center">
