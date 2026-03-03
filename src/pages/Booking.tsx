@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 
 export default function Booking() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   const content = {
     en: {
@@ -47,6 +47,8 @@ export default function Booking() {
         <meta property="og:title" content={c.seoTitle} />
         <meta property="og:description" content={c.seoDesc} />
         <meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />

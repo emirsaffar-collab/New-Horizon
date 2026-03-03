@@ -20,6 +20,8 @@
     <meta property="og:title" content="New Horizon Villas | Luxury Vacation Rental in Kea, Greece" />
     <meta property="og:description" content="Experience the closest Cycladic secret to Athens. New Horizon Villas offers a sanctuary of stone and sea in Fotimari, Kea." />
     <meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="New Horizon Villas" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="el_GR" />
@@ -48,6 +50,19 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Single Page Apps for GitHub Pages — restores path encoded by 404.html -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
   </body>
 </html>
 

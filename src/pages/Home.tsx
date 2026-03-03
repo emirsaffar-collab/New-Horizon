@@ -124,7 +124,9 @@ export default function Home() {
         <meta property="og:title" content={c.seoTitle} />
         <meta property="og:description" content={c.seoDesc} />
         <meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" />
-        
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={c.seoTitle} />
@@ -248,13 +250,15 @@ export default function Home() {
               transition={{ duration: 10, ease: "easeOut" }}
               className="w-full h-full"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80" 
+              <img
+                src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80"
                 srcSet="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=640&q=80 640w,
                         https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1280&q=80 1280w,
                         https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80 1920w"
                 sizes="100vw"
-                alt="New Horizon Villas luxury Mediterranean property with panoramic Aegean Sea views at sunset in Kea, Greece" 
+                alt="New Horizon Villas luxury Mediterranean property with panoramic Aegean Sea views at sunset in Kea, Greece"
+                width={1920}
+                height={1280}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
                 fetchpriority="high"

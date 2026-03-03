@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 
 export default function Location() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   const content = {
     en: {
@@ -65,6 +65,8 @@ export default function Location() {
         <meta property="og:title" content={c.seoTitle} />
         <meta property="og:description" content={c.seoDesc} />
         <meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -194,13 +196,14 @@ export default function Location() {
         <div className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
           <h3 className="font-serif text-xl md:text-2xl text-stone-800 mb-6 text-center">{c.mapTitle}</h3>
           <div className="w-full h-64 md:h-96 bg-stone-200 rounded-sm overflow-hidden shadow-inner md:grayscale md:hover:grayscale-0 transition-all duration-500">
-             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12648.78923456789!2d24.329075!3d37.662572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDM5JzQ1LjMiTiAyNMKwMTknNDQuNyJF!5e0!3m2!1sen!2sgr!4v1620000000000!5m2!1sen!2sgr" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen={true} 
+             <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12648.78923456789!2d24.329075!3d37.662572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDM5JzQ1LjMiTiAyNMKwMTknNDQuNyJF!5e0!3m2!1sen!2sgr!4v1620000000000!5m2!1sen!2sgr"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
               loading="lazy"
+              sandbox="allow-same-origin allow-scripts allow-popups allow-presentation"
               title="Kea Location Map"
             ></iframe>
           </div>

@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 
 export default function Explore() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   const content = {
     en: {
@@ -191,7 +191,9 @@ export default function Explore() {
         <meta property="og:title" content={c.seoTitle} />
         <meta property="og:description" content={c.seoDesc} />
         <meta property="og:image" content="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80" />
-        
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={c.seoTitle} />
@@ -251,9 +253,11 @@ export default function Explore() {
           transition={{ duration: 1.5, ease: "easeOut" }}
           className="absolute inset-0 z-0"
         >
-          <img 
-            src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1920&q=80" 
-            alt="Beautiful Kea island coastline in the Cyclades, Greece, showcasing pristine beaches and crystal-clear Aegean waters" 
+          <img
+            src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1920&q=80"
+            alt="Beautiful Kea island coastline in the Cyclades, Greece, showcasing pristine beaches and crystal-clear Aegean waters"
+            width={1920}
+            height={1200}
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
             loading="eager"
@@ -315,8 +319,10 @@ export default function Explore() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8 }}
-                      src={`https://picsum.photos/seed/${item.name.split('(')[0].trim().toLowerCase().replace(/\s+/g, '_')}/600/450`} 
+                      src={`https://picsum.photos/seed/${item.name.split('(')[0].trim().toLowerCase().replace(/\s+/g, '_')}/600/450`}
                       alt={item.name}
+                      width={600}
+                      height={450}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />

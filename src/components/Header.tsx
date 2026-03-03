@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'motion/react';
 export default function Header() {
   const { t, language, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const toggleLanguage = useCallback(() => {
     setLanguage(language === 'en' ? 'el' : 'en');
@@ -23,6 +24,31 @@ export default function Header() {
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, closeMenu]);
+
+  // Focus trap for mobile menu dialog
+  useEffect(() => {
+    if (!isOpen) {
+      menuButtonRef.current?.focus();
+      return;
+    }
+    const dialog = document.getElementById('mobile-nav');
+    if (!dialog) return;
+    const focusableSelector = 'button, [href], [tabindex]:not([tabindex="-1"])';
+    const focusable = Array.from(dialog.querySelectorAll<HTMLElement>(focusableSelector));
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    first?.focus();
+    const handleTab = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return;
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last?.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first?.focus(); }
+      }
+    };
+    document.addEventListener('keydown', handleTab);
+    return () => document.removeEventListener('keydown', handleTab);
+  }, [isOpen]);
 
   return (
     <>
@@ -68,6 +94,7 @@ export default function Header() {
                 <span className="text-xs font-bold">{language.toUpperCase()}</span>
               </button>
               <button
+                ref={menuButtonRef}
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-stone-800 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
