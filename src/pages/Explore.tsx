@@ -183,6 +183,21 @@ export default function Explore() {
       <Helmet>
         <title>{c.seoTitle}</title>
         <meta name="description" content={c.seoDesc} />
+        <link rel="canonical" href="https://emirsaffar-collab.github.io/New-Horizon/explore" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://emirsaffar-collab.github.io/New-Horizon/explore" />
+        <meta property="og:title" content={c.seoTitle} />
+        <meta property="og:description" content={c.seoDesc} />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={c.seoTitle} />
+        <meta name="twitter:description" content={c.seoDesc} />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80" />
+        
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -217,9 +232,10 @@ export default function Explore() {
         >
           <img 
             src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1920&q=80" 
-            alt="Kea Coastline" 
+            alt="Beautiful Kea island coastline in the Cyclades, Greece, showcasing pristine beaches and crystal-clear Aegean waters" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>

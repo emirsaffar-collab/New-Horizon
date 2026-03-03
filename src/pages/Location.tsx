@@ -57,6 +57,18 @@ export default function Location() {
       <Helmet>
         <title>{c.seoTitle}</title>
         <meta name="description" content={c.seoDesc} />
+        <link rel="canonical" href="https://emirsaffar-collab.github.io/New-Horizon/location" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://emirsaffar-collab.github.io/New-Horizon/location" />
+        <meta property="og:title" content={c.seoTitle} />
+        <meta property="og:description" content={c.seoDesc} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={c.seoTitle} />
+        <meta name="twitter:description" content={c.seoDesc} />
       </Helmet>
       {/* Header */}
       <div className="bg-stone-100 py-16 md:py-24 px-4 text-center">
@@ -73,7 +85,7 @@ export default function Location() {
           transition={{ delay: 0.3 }}
           className="flex items-center justify-center text-[#E2725B] space-x-2"
         >
-          <MapPin className="w-4 h-4 md:w-5 md:h-5" />
+          <MapPin className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
           <span className="uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[9px] sm:text-[10px] font-bold">{c.subtitle}</span>
         </motion.div>
       </div>
@@ -93,7 +105,7 @@ export default function Location() {
             {/* Privacy Section */}
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <Navigation className="w-5 h-5 md:w-6 md:h-6 text-[#004C98]" />
+                <Navigation className="w-5 h-5 md:w-6 md:h-6 text-[#004C98]" aria-hidden="true" />
                 <h3 className="font-serif text-lg md:text-xl text-stone-800">{c.privacyTitle}</h3>
               </div>
               <p className="text-stone-600 text-sm mb-4 leading-relaxed">
@@ -112,14 +124,14 @@ export default function Location() {
             {/* Vehicle Section */}
             <div className="bg-stone-50 p-5 md:p-6 rounded-lg border border-stone-100">
               <div className="flex items-center space-x-3 mb-4">
-                <Car className="w-5 h-5 md:w-6 md:h-6 text-[#E2725B]" />
+                <Car className="w-5 h-5 md:w-6 md:h-6 text-[#E2725B]" aria-hidden="true" />
                 <h3 className="font-serif text-lg md:text-xl text-stone-800">{c.vehicleTitle}</h3>
               </div>
               <p className="text-stone-600 text-sm mb-4 leading-relaxed">
                 {c.vehicleText}
               </p>
               <div className="flex items-start bg-[#E2725B]/10 p-3 rounded text-xs text-[#c55b45]">
-                <Info className="w-4 h-4 mr-2 flex-shrink-0 mt-0.5" />
+                <Info className="w-4 h-4 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="font-medium">{c.vehicleWarning}</span>
               </div>
             </div>

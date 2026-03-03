@@ -39,6 +39,18 @@ export default function Booking() {
       <Helmet>
         <title>{c.seoTitle}</title>
         <meta name="description" content={c.seoDesc} />
+        <link rel="canonical" href="https://emirsaffar-collab.github.io/New-Horizon/book" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://emirsaffar-collab.github.io/New-Horizon/book" />
+        <meta property="og:title" content={c.seoTitle} />
+        <meta property="og:description" content={c.seoDesc} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={c.seoTitle} />
+        <meta name="twitter:description" content={c.seoDesc} />
       </Helmet>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 md:mb-16">
         <motion.h1 
@@ -69,7 +81,7 @@ export default function Booking() {
       {/* Booking Widget Placeholder */}
       <div className="max-w-5xl mx-auto px-4 mb-16 md:mb-20">
         <div className="bg-stone-50 border-2 border-dashed border-stone-200 rounded-lg h-80 md:h-96 flex flex-col items-center justify-center text-stone-400 p-6">
-          <Calendar className="w-10 h-10 md:w-12 md:h-12 mb-4 opacity-50" />
+          <Calendar className="w-10 h-10 md:w-12 md:h-12 mb-4 opacity-50" aria-hidden="true" />
           <span className="text-base md:text-lg font-medium text-center">{c.widgetPlaceholder}</span>
           <span className="text-xs mt-2 text-center">(Smoobu / Lodgify Integration)</span>
         </div>
@@ -84,9 +96,10 @@ export default function Booking() {
             href="https://wa.me/306900000000" 
             target="_blank" 
             rel="noopener noreferrer"
+            aria-label="Contact us via WhatsApp for booking assistance"
             className="inline-flex items-center bg-[#25D366] text-white px-6 md:px-8 py-3 rounded-full hover:bg-[#20bd5a] transition-colors font-medium shadow-lg text-sm md:text-base min-h-[48px]"
           >
-            <MessageCircle className="w-5 h-5 mr-2" />
+            <MessageCircle className="w-5 h-5 mr-2" aria-hidden="true" />
             {c.whatsappBtn}
           </a>
         </div>

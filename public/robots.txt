@@ -1,0 +1,11 @@
+# robots.txt for New Horizon Villas
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://emirsaffar-collab.github.io/New-Horizon/sitemap.xml
+
+# Block access to specific files
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /*.json$

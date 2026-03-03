@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { ShieldCheck, CreditCard } from 'lucide-react';
 
@@ -30,11 +31,11 @@ export default function Footer() {
             <h4 className="text-white text-xs md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold mb-6 opacity-50">Secure Booking</h4>
             <div className="flex flex-col space-y-4">
               <div className="flex items-center space-x-3">
-                <ShieldCheck className="w-4 h-4 text-[#556B2F]" strokeWidth={1.5} />
+                <ShieldCheck className="w-4 h-4 text-[#556B2F]" strokeWidth={1.5} aria-hidden="true" />
                 <span className="text-xs md:text-[10px] uppercase tracking-widest">SSL Secured Connection</span>
               </div>
               <div className="flex items-center space-x-3">
-                <CreditCard className="w-4 h-4 text-[#556B2F]" strokeWidth={1.5} />
+                <CreditCard className="w-4 h-4 text-[#556B2F]" strokeWidth={1.5} aria-hidden="true" />
                 <span className="text-xs md:text-[10px] uppercase tracking-widest">Verified Payment Gateway</span>
               </div>
             </div>
@@ -44,8 +45,8 @@ export default function Footer() {
         <div className="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs md:text-xs space-y-4 md:space-y-0">
           <p>&copy; {currentYear} New Horizon Villas. {t('footer.rights')}</p>
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
