@@ -306,45 +306,45 @@ export default function Explore() {
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-stone-50">
                     <div className="flex flex-wrap gap-2">
                       {item.amenities && item.amenities.map((amenity, aIdx) => (
-                        <span key={aIdx} className="text-[8px] sm:text-[9px] uppercase tracking-widest px-2 py-1 bg-stone-50 text-stone-400 border border-stone-100 rounded-full">
+                        <span key={aIdx} className="text-[11px] sm:text-xs uppercase tracking-widest px-2 py-1 bg-stone-50 text-stone-400 border border-stone-100 rounded-full">
                           {amenity}
                         </span>
                       ))}
                     </div>
                     
-                    <div className="flex items-center space-x-1.5 sm:space-x-2 ml-2">
-                      <button 
+                    <div className="flex items-center space-x-0 sm:space-x-1 ml-2">
+                      <button
                         onClick={() => {
                           const url = window.location.href;
                           const text = `${item.name} - ${item.desc}`;
                           window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`, '_blank');
                         }}
-                        className="p-1.5 text-stone-300 hover:text-[#004C98] transition-colors"
+                        className="p-2.5 text-stone-300 hover:text-[#004C98] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                         title="Share on Facebook"
                       >
-                        <Facebook className="w-3.5 h-3.5" />
+                        <Facebook className="w-4 h-4" />
                       </button>
-                      <button 
+                      <button
                         onClick={() => {
                           const url = window.location.href;
                           const text = `${item.name} - ${item.desc}`;
                           window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank');
                         }}
-                        className="p-1.5 text-stone-300 hover:text-[#004C98] transition-colors"
+                        className="p-2.5 text-stone-300 hover:text-[#004C98] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                         title="Share on Twitter"
                       >
-                        <Twitter className="w-3.5 h-3.5" />
+                        <Twitter className="w-4 h-4" />
                       </button>
-                      <button 
+                      <button
                         onClick={() => {
                           const url = window.location.href;
                           const text = `${item.name}: ${item.desc}`;
                           window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
                         }}
-                        className="p-1.5 text-stone-300 hover:text-[#004C98] transition-colors"
+                        className="p-2.5 text-stone-300 hover:text-[#004C98] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                         title="Share on WhatsApp"
                       >
-                        <MessageCircle className="w-3.5 h-3.5" />
+                        <MessageCircle className="w-4 h-4" />
                       </button>
                     </div>
                   </div>

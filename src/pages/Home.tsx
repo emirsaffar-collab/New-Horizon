@@ -239,19 +239,19 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border border-stone-100 divide-x divide-y md:divide-y-0 divide-stone-100">
             <div className="flex flex-col items-center space-y-3 md:space-y-4 p-6 md:p-10 hover:bg-stone-50 transition-colors duration-500">
               <Sun className="w-8 h-8 md:w-8 md:h-8 text-[#E2725B] flex-shrink-0" strokeWidth={1} aria-hidden="true" />
-              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.view}</span>
+              <span className="text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.view}</span>
             </div>
             <div className="flex flex-col items-center space-y-3 md:space-y-4 p-6 md:p-10 hover:bg-stone-50 transition-colors duration-500">
               <Wind className="w-8 h-8 md:w-8 md:h-8 text-[#556B2F] flex-shrink-0" strokeWidth={1} aria-hidden="true" />
-              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.nature}</span>
+              <span className="text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.nature}</span>
             </div>
             <div className="flex flex-col items-center space-y-3 md:space-y-4 p-6 md:p-10 hover:bg-stone-50 transition-colors duration-500">
               <Anchor className="w-8 h-8 md:w-8 md:h-8 text-[#004C98] flex-shrink-0" strokeWidth={1} aria-hidden="true" />
-              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.design}</span>
+              <span className="text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.design}</span>
             </div>
             <div className="flex flex-col items-center space-y-3 md:space-y-4 p-6 md:p-10 hover:bg-stone-50 transition-colors duration-500">
               <MapPin className="w-8 h-8 md:w-8 md:h-8 text-stone-300 flex-shrink-0" strokeWidth={1} aria-hidden="true" />
-              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.privacy}</span>
+              <span className="text-[11px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-stone-400 font-bold text-center leading-tight">{c.highlights.privacy}</span>
             </div>
           </div>
         </div>
@@ -323,7 +323,7 @@ export default function Home() {
           <blockquote className="font-serif text-2xl sm:text-3xl md:text-4xl text-stone-800 italic mb-8 md:mb-10 leading-relaxed tracking-tight px-4">
             "{c.review1}"
           </blockquote>
-          <cite className="not-italic text-[9px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-stone-400 font-bold block">
+          <cite className="not-italic text-xs sm:text-[11px] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-stone-400 font-bold block">
             — {c.reviewAuthor1}
           </cite>
         </div>

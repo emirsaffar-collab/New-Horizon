@@ -47,7 +47,7 @@ export default function CookieConsent() {
   const c = language === 'en' ? content.en : content.el;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 animate-in slide-in-from-bottom duration-500">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 animate-in slide-in-from-bottom duration-500" style={{ paddingBottom: 'max(env(safe-area-inset-bottom, 0px), 16px)' }}>
       <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-2xl border-t-4 border-[#E2725B] p-6 md:p-8">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
           <div className="flex-shrink-0">

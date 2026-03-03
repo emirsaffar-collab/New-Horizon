@@ -86,7 +86,7 @@ export default function Location() {
           className="flex items-center justify-center text-[#E2725B] space-x-2"
         >
           <MapPin className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
-          <span className="uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[9px] sm:text-[10px] font-bold">{c.subtitle}</span>
+          <span className="uppercase tracking-[0.25em] sm:tracking-[0.3em] text-xs sm:text-[11px] font-bold">{c.subtitle}</span>
         </motion.div>
       </div>
 
@@ -130,7 +130,7 @@ export default function Location() {
               <p className="text-stone-600 text-sm mb-4 leading-relaxed">
                 {c.vehicleText}
               </p>
-              <div className="flex items-start bg-[#E2725B]/10 p-3 rounded text-xs text-[#c55b45]">
+              <div className="flex items-start bg-[#E2725B]/10 p-3 rounded text-sm text-[#c55b45]">
                 <Info className="w-4 h-4 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="font-medium">{c.vehicleWarning}</span>
               </div>
@@ -142,7 +142,7 @@ export default function Location() {
         {/* Map Section */}
         <div className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
           <h3 className="font-serif text-xl md:text-2xl text-stone-800 mb-6 text-center">{c.mapTitle}</h3>
-          <div className="w-full h-64 md:h-96 bg-stone-200 rounded-sm overflow-hidden shadow-inner grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="w-full h-64 md:h-96 bg-stone-200 rounded-sm overflow-hidden shadow-inner md:grayscale md:hover:grayscale-0 transition-all duration-500">
              <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12648.78923456789!2d24.329075!3d37.662572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDM5JzQ1LjMiTiAyNMKwMTknNDQuNyJF!5e0!3m2!1sen!2sgr!4v1620000000000!5m2!1sen!2sgr" 
               width="100%" 
