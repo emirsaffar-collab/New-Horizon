@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import Explore from './pages/Explore';
-import Location from './pages/Location';
-import Booking from './pages/Booking';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import NotFound from './pages/NotFound';
+
+const Explore = React.lazy(() => import('./pages/Explore'));
+const Location = React.lazy(() => import('./pages/Location'));
+const Booking = React.lazy(() => import('./pages/Booking'));
+const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = React.lazy(() => import('./pages/TermsOfService'));
+const NotFound = React.lazy(() => import('./pages/NotFound'));
+
+function LazyPage({ children }: { children: React.ReactNode }) {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-2 border-stone-300 border-t-[#E2725B] rounded-full animate-spin" /></div>}>
+      {children}
+    </Suspense>
+  );
+}
 
 const router = createBrowserRouter([
   {
@@ -22,27 +31,27 @@ const router = createBrowserRouter([
       },
       {
         path: "explore",
-        element: <Explore />,
+        element: <LazyPage><Explore /></LazyPage>,
       },
       {
         path: "location",
-        element: <Location />,
+        element: <LazyPage><Location /></LazyPage>,
       },
       {
         path: "book",
-        element: <Booking />,
+        element: <LazyPage><Booking /></LazyPage>,
       },
       {
         path: "privacy",
-        element: <PrivacyPolicy />,
+        element: <LazyPage><PrivacyPolicy /></LazyPage>,
       },
       {
         path: "terms",
-        element: <TermsOfService />,
+        element: <LazyPage><TermsOfService /></LazyPage>,
       },
       {
         path: "*",
-        element: <NotFound />,
+        element: <LazyPage><NotFound /></LazyPage>,
       },
     ],
   },

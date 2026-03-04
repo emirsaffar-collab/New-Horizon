@@ -401,8 +401,9 @@ export default function Explore() {
                         }}
                         className="p-2.5 text-stone-300 hover:text-[#004C98] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                         title="Share on Facebook"
+                        aria-label={`Share ${item.name} on Facebook`}
                       >
-                        <Facebook className="w-4 h-4" />
+                        <Facebook className="w-4 h-4" aria-hidden="true" />
                       </button>
                       <button
                         onClick={() => {
@@ -412,8 +413,9 @@ export default function Explore() {
                         }}
                         className="p-2.5 text-stone-300 hover:text-[#004C98] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                         title="Share on Twitter"
+                        aria-label={`Share ${item.name} on Twitter`}
                       >
-                        <Twitter className="w-4 h-4" />
+                        <Twitter className="w-4 h-4" aria-hidden="true" />
                       </button>
                       <button
                         onClick={() => {
@@ -423,8 +425,9 @@ export default function Explore() {
                         }}
                         className="p-2.5 text-stone-300 hover:text-[#004C98] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                         title="Share on WhatsApp"
+                        aria-label={`Share ${item.name} on WhatsApp`}
                       >
-                        <MessageCircle className="w-4 h-4" />
+                        <MessageCircle className="w-4 h-4" aria-hidden="true" />
                       </button>
                     </div>
                   </div>
