@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react';
 import { ArrowRight, Star, Wind, Sun, Anchor, MapPin, Wifi, Thermometer, Tv, ChefHat, Car, Eye, Utensils, PawPrint } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -8,13 +8,14 @@ import { Helmet } from 'react-helmet-async';
 export default function Home() {
   const { t, language } = useLanguage();
   const heroRef = useRef<HTMLElement>(null);
+  const prefersReducedMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const y = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ["0%", "0%"] : ["0%", "30%"]);
 
   const content = {
     en: {
@@ -374,7 +375,6 @@ export default function Home() {
               "longitude": 24.329075
             },
             "priceRange": "$$$",
-            "telephone": "+30 210 000 0000",
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.97",
@@ -458,7 +458,7 @@ export default function Home() {
                 height={1280}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </motion.div>
           </motion.div>
@@ -554,6 +554,8 @@ export default function Home() {
                 <img
                   src="https://picsum.photos/seed/stone_house_greece/800/1000"
                   alt="Traditional xerolithia stone architecture characteristic of New Horizon Villas in Kea, Cyclades"
+                  width={800}
+                  height={1000}
                   className="w-full h-full object-cover rounded-sm shadow-2xl"
                   referrerPolicy="no-referrer"
                   loading="lazy"
@@ -615,6 +617,8 @@ export default function Home() {
            <img
             src="https://picsum.photos/seed/aegean_sea_texture/1920/1080"
             alt="Aegean Sea water texture background"
+            width={1920}
+            height={1080}
             className="w-full h-full object-cover mix-blend-overlay"
             referrerPolicy="no-referrer"
             loading="lazy"
@@ -656,6 +660,8 @@ export default function Home() {
                 <img
                   src="https://picsum.photos/seed/greek_villa_owners/800/1000"
                   alt="New Horizon Villas founders and property"
+                  width={800}
+                  height={1000}
                   className="w-full h-full object-cover rounded-sm shadow-2xl"
                   referrerPolicy="no-referrer"
                   loading="lazy"

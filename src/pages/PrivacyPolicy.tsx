@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
       sections: [
         {
           title: "1. Information We Collect",
-          content: "We collect information you provide when making a booking or inquiry, including your name, email address, phone number, and payment details. We also collect information about your use of our website through cookies and analytics."
+          content: "We collect information you provide when making a booking or inquiry, including your name, email address, phone number, and payment details. We also use essential cookies to remember your language preference and cookie consent choice."
         },
         {
           title: "2. How We Use Your Information",
@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
         },
         {
           title: "4. Cookies",
-          content: "Our website uses cookies to enhance your browsing experience and analyze website traffic. You can control cookie preferences through your browser settings."
+          content: "Our website uses essential cookies to enhance your browsing experience and remember your preferences (language and cookie consent). We do not use tracking or analytics cookies. You can control cookie preferences through your browser settings."
         },
         {
           title: "5. Your Rights",
@@ -63,7 +63,7 @@ export default function PrivacyPolicy() {
         },
         {
           title: "4. Cookies",
-          content: "Ο ιστότοπός μας χρησιμοποιεί cookies για τη βελτίωση της εμπειρίας περιήγησης και την ανάλυση της κυκλοφορίας. Μπορείτε να ελέγξετε τις προτιμήσεις cookies μέσω των ρυθμίσεων του προγράμματος περιήγησης."
+          content: "Ο ιστότοπός μας χρησιμοποιεί βασικά cookies για τη βελτίωση της εμπειρίας περιήγησης και την αποθήκευση των προτιμήσεών σας (γλώσσα και συγκατάθεση cookies). Δεν χρησιμοποιούμε cookies παρακολούθησης ή ανάλυσης. Μπορείτε να ελέγξετε τις προτιμήσεις cookies μέσω των ρυθμίσεων του προγράμματος περιήγησης."
         },
         {
           title: "5. Τα Δικαιώματά σας",

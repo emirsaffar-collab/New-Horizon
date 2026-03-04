@@ -140,8 +140,8 @@ export default function Footer() {
           <div className="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs md:text-xs space-y-4 md:space-y-0">
             <p>&copy; {currentYear} New Horizon Villas. {t('footer.rights')}</p>
             <div className="flex space-x-4">
-              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link to="/privacy" className="hover:text-white transition-colors">{language === 'en' ? 'Privacy Policy' : 'Πολιτική Απορρήτου'}</Link>
+              <Link to="/terms" className="hover:text-white transition-colors">{language === 'en' ? 'Terms of Service' : 'Όροι Χρήσης'}</Link>
             </div>
           </div>
         </div>

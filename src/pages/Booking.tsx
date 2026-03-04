@@ -93,6 +93,8 @@ export default function Booking() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const today = new Date().toISOString().split('T')[0];
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const subject = encodeURIComponent(`Booking Request — ${formData.checkin} to ${formData.checkout} (${formData.guests} guests)`);
@@ -248,6 +250,7 @@ export default function Booking() {
                   name="checkin"
                   type="date"
                   required
+                  min={today}
                   value={formData.checkin}
                   onChange={handleChange}
                   className="w-full border border-stone-200 bg-white px-3 py-2.5 text-sm text-stone-700 focus:outline-none focus:border-[#004C98] transition-colors rounded-sm"
@@ -260,6 +263,7 @@ export default function Booking() {
                   name="checkout"
                   type="date"
                   required
+                  min={formData.checkin || today}
                   value={formData.checkout}
                   onChange={handleChange}
                   className="w-full border border-stone-200 bg-white px-3 py-2.5 text-sm text-stone-700 focus:outline-none focus:border-[#004C98] transition-colors rounded-sm"
