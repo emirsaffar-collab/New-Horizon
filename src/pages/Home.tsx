@@ -374,7 +374,6 @@ export default function Home() {
               "longitude": 24.329075
             },
             "priceRange": "$$$",
-            "telephone": "+30 210 000 0000",
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.97",
@@ -458,7 +457,7 @@ export default function Home() {
                 height={1280}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </motion.div>
           </motion.div>

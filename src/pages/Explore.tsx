@@ -286,11 +286,11 @@ export default function Explore() {
                   "@type": sIdx === 0 ? "Beach" : sIdx === 1 ? "Restaurant" : "Place",
                   "name": item.name,
                   "description": item.desc,
-                  "amenityFeature": item.amenities?.map(a => ({
+                  "amenityFeature": 'amenities' in item ? item.amenities.map((a: string) => ({
                     "@type": "LocationFeatureSpecification",
                     "name": a,
                     "value": true
-                  }))
+                  })) : undefined
                 }
               }))
             )
@@ -385,7 +385,7 @@ export default function Explore() {
                   
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-stone-50">
                     <div className="flex flex-wrap gap-2">
-                      {item.amenities && item.amenities.map((amenity, aIdx) => (
+                      {'amenities' in item && item.amenities.map((amenity: string, aIdx: number) => (
                         <span key={aIdx} className="text-[11px] sm:text-xs uppercase tracking-widest px-2 py-1 bg-stone-50 text-stone-400 border border-stone-100 rounded-full">
                           {amenity}
                         </span>

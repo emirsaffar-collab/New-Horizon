@@ -31,14 +31,14 @@ export default function CookieConsent() {
   const content = {
     en: {
       title: "Cookie Notice",
-      message: "We use cookies to enhance your browsing experience, analyze site traffic, and provide personalized content. By clicking 'Accept', you consent to our use of cookies.",
+      message: "We use essential cookies to enhance your browsing experience and remember your preferences. By clicking 'Accept', you consent to our use of cookies.",
       accept: "Accept",
       decline: "Decline",
       learnMore: "Learn more"
     },
     el: {
       title: "Ειδοποίηση Cookies",
-      message: "Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία περιήγησής σας, να αναλύσουμε την κυκλοφορία και να παρέχουμε εξατομικευμένο περιεχόμενο. Κάνοντας κλικ στο 'Αποδοχή', συναινείτε στη χρήση cookies.",
+      message: "Χρησιμοποιούμε βασικά cookies για να βελτιώσουμε την εμπειρία περιήγησής σας και να θυμόμαστε τις προτιμήσεις σας. Κάνοντας κλικ στο 'Αποδοχή', συναινείτε στη χρήση cookies.",
       accept: "Αποδοχή",
       decline: "Απόρριψη",
       learnMore: "Μάθετε περισσότερα"
